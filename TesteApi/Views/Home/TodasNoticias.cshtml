@@ -1,0 +1,9 @@
+﻿@model IEnumerable<TesteApi.Models.Noticia>
+<h2>Todas Noticias</h2>
+@foreach (var noticias in Model)
+{
+    <fieldset>
+        <p>@noticias.CorpoNoticia</p>
+    </fieldset>
+    
+}
