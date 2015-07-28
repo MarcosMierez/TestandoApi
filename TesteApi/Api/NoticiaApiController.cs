@@ -11,17 +11,29 @@ namespace TesteApi.Api
 {
     public class NoticiaApiController : ApiController
     {
-        private NoticiaCRUD ntc= new NoticiaCRUD();
+        private readonly NoticiaCRUD _ntc= new NoticiaCRUD();
         public IEnumerable<Noticia> Get()
         {
-            return ntc.ListarNoticias();
+            return _ntc.ListarNoticias();
         }
+        [HttpPost]
         public HttpResponseMessage Post(Noticia noticia)
         {
             if (!ModelState.IsValid)
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
-            ntc.Save(noticia);
+            _ntc.Save(noticia);
             return Request.CreateResponse(HttpStatusCode.Created, noticia);
+        }
+
+        [Route("api/detalhe/{noticiaId}")]
+        [HttpGet]
+        public Noticia Get(string noticiaId)
+        {
+            if (noticiaId!=null)
+            {
+                return _ntc.GetById(noticiaId);
+            }
+            return new Noticia();
         }
     }
 }

@@ -13,6 +13,7 @@ namespace TesteApi
     {
         protected void Application_Start()
         {
+            
             var Formater = GlobalConfiguration.Configuration.Formatters;
             Formater.Remove(Formater.XmlFormatter);
 

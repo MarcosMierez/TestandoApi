@@ -28,3 +28,6 @@ c:\users\marcos vinicius\documents\visual studio 2013\Projects\TesteApi\TesteApi
 c:\users\marcos vinicius\documents\visual studio 2013\Projects\TesteApi\TesteApi\bin\System.Net.Http.Formatting.xml
 c:\users\marcos vinicius\documents\visual studio 2013\Projects\TesteApi\TesteApi\bin\System.Web.Http.xml
 c:\users\marcos vinicius\documents\visual studio 2013\Projects\TesteApi\TesteApi\bin\System.Web.Http.WebHost.xml
+C:\Users\Marcos Vinicius\Documents\Visual Studio 2013\Projects\TesteApi\TesteApi\bin\System.Web.Cors.dll
+C:\Users\Marcos Vinicius\Documents\Visual Studio 2013\Projects\TesteApi\TesteApi\bin\System.Web.Http.Cors.dll
+C:\Users\Marcos Vinicius\Documents\Visual Studio 2013\Projects\TesteApi\TesteApi\bin\System.Web.Http.Cors.xml
