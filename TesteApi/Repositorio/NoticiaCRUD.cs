@@ -23,8 +23,22 @@ namespace TesteApi.Repositorio
         public Noticia GetById(string id)
         {
            return ctx.SqlBd.Query<Noticia>("select id,colunaid,corponoticia from noticia where id = @noticiaid", new {noticiaid = id}).FirstOrDefault();
-        } 
+        }
+
+        public void Update(Noticia entidade)
+        {
+            ctx.SqlBd.Query("update noticia set corponoticia = @cn , colunaId = @cId where id = @id", new
+            {
+                id = entidade.Id,
+                cn = entidade.CorpoNoticia,
+                cId =  entidade.ColunaId
+            });
+        }
 
 
+        public void Remove(string id)
+        {
+            ctx.SqlBd.Query("delete  from noticia where id = @noticiaId", new {noticiaId = id});
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
+using System.Web.SessionState;
 using MySql.Data.MySqlClient;
 
 namespace TesteApi.Repositorio
@@ -20,5 +21,6 @@ public class Contexto
         }
 
         public MySqlConnection SqlBd = new MySqlConnection(getConnectionString());
+ 
     }
 }

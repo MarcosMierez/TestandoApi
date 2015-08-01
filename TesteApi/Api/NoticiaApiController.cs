@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -34,6 +35,25 @@ namespace TesteApi.Api
                 return _ntc.GetById(noticiaId);
             }
             return new Noticia();
+        }
+        public HttpResponseMessage Put(Noticia noticia)
+        {
+            if (!ModelState.IsValid)
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+
+            _ntc.Update(noticia);
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        [Route("api/delete/{id}")]
+        public HttpResponseMessage Delete(string id)
+        {
+            var noticiaBanco = _ntc.GetById(id);
+            if (string.IsNullOrEmpty(noticiaBanco.ColunaId))
+                return Request.CreateResponse(HttpStatusCode.NotFound, "Noticia nao encontrada");
+
+            _ntc.Remove(id);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }
